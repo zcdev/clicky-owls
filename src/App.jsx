@@ -7,33 +7,44 @@ import { shuffle } from './utils/shuffle'
 
 // List of owls
 const allOwls = [
-  { "id": 1, "image": "owl-1.png", "clicked": false },
-  { "id": 2, "image": "owl-2.png", "clicked": false },
-  { "id": 3, "image": "owl-3.png", "clicked": false },
-  { "id": 4, "image": "owl-4.png", "clicked": false },
-  { "id": 5, "image": "owl-5.png", "clicked": false },
-  { "id": 6, "image": "owl-6.png", "clicked": false }
+  { "id": 1, "image": "owl-1.png" },
+  { "id": 2, "image": "owl-2.png" },
+  { "id": 3, "image": "owl-3.png" },
+  { "id": 4, "image": "owl-4.png" },
+  { "id": 5, "image": "owl-5.png" },
+  { "id": 6, "image": "owl-6.png" }
 ]
 
 export default function App() {
-  // Owl state (includes click status)
+  // Owls to be displayed 
   const [owls, setOwls] = useState(allOwls)
+
+  // Track the clicked owls by ID in an array
+  const [clickedOwlIds, setClickedOwlIds] = useState([]);
 
   // Handle the current owl when clicked
   const handleClick = (id) => {
 
-    // DEBUG: log clicked owl
+    // DEBUG: log the current owl ID
     console.log(`Owl ${id} clicked!`)
 
-    // Update the clicked owl's state
-    setOwls(prev => {
-      const updated = prev.map(owl =>
-        owl.id === id ? { ...owl, clicked: true } : owl
-      )
-      
-      // Shuffle owl cards after each click
-      return shuffle(updated)
-    })
+    // Check the current owl has already been clicked
+    if (clickedOwlIds.includes(id)) {
+      console.log("already clicked", clickedOwlIds)
+      console.log("your guess is wrong")
+    } else {
+      console.log("clicked once", clickedOwlIds)
+      console.log("your guess is correct")
+    }
+
+    // Add the current owl ID to the clicked history
+    setClickedOwlIds(prev => [...prev, id])
+    
+    // DEBUG: track the clicked history
+    console.log(clickedOwlIds)
+
+    // Shuffle owl cards after each click
+    setOwls(shuffle(owls))
   }
 
   return (
@@ -45,7 +56,7 @@ export default function App() {
           <OwlCard
             key={owl.id}
             owl={owl}
-            onClick={() => handleClick(owl.id)}
+            onClick={handleClick}
           />
         ))}
       </OwlGrid>
