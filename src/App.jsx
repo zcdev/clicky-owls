@@ -3,6 +3,7 @@ import Header from './components/Header'
 import ScoreBoard from './components/ScoreBoard'
 import OwlGrid from './components/OwlGrid'
 import OwlCard from './components/OwlCard'
+import { shuffle } from './utils/shuffle'
 
 // List of owls
 const allOwls = [
@@ -15,21 +16,24 @@ const allOwls = [
 ]
 
 export default function App() {
-  // Initialize state for storing the owls' statuses
+  // Owl state (includes click status)
   const [owls, setOwls] = useState(allOwls)
 
   // Handle the current owl when clicked
   const handleClick = (id) => {
 
-    // TODO: Debug use
+    // DEBUG: log clicked owl
     console.log(`Owl ${id} clicked!`)
 
     // Update the clicked owl's state
-    setOwls(prev =>
-      prev.map(owl =>
+    setOwls(prev => {
+      const updated = prev.map(owl =>
         owl.id === id ? { ...owl, clicked: true } : owl
       )
-    )
+      
+      // Shuffle owl cards after each click
+      return shuffle(updated)
+    })
   }
 
   return (
