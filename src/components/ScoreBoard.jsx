@@ -1,7 +1,7 @@
-export default function ScoreBoard() {
+export default function ScoreBoard({ score, highScore }) {
     return (
         <div className="scoreboard">
-            Score: "score" | High Score: "highScore"
+            Score: {score} | High Score: {highScore}
         </div>
     )
 }

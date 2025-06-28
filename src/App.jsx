@@ -16,11 +16,17 @@ const allOwls = [
 ]
 
 export default function App() {
-  // Owls to be displayed 
+  // List of currently shuffled owls
   const [owls, setOwls] = useState(allOwls)
 
-  // Track the clicked owls by ID in an array
-  const [clickedOwlIds, setClickedOwlIds] = useState([]);
+  // Array of owl IDs already clicked
+  const [clickedOwlIds, setClickedOwlIds] = useState([])
+
+  // Current game score
+  const [score, setScore] = useState(0)
+
+  // All-time highest score
+  const [highScore, setHighScore] = useState(0)
 
   // Handle the current owl when clicked
   const handleClick = (id) => {
@@ -28,20 +34,29 @@ export default function App() {
     // DEBUG: log the current owl ID
     console.log(`Owl ${id} clicked!`)
 
-    // Check the current owl has already been clicked
+    // Check if this owl was already clicked
     if (clickedOwlIds.includes(id)) {
       console.log("already clicked", clickedOwlIds)
       console.log("your guess is wrong")
+
+      // Incorrect guess: reset score and clicked owl history
+      setScore(0)
+      setClickedOwlIds([])
+
     } else {
       console.log("clicked once", clickedOwlIds)
       console.log("your guess is correct")
-    }
 
-    // Add the current owl ID to the clicked history
-    setClickedOwlIds(prev => [...prev, id])
-    
-    // DEBUG: track the clicked history
-    console.log(clickedOwlIds)
+      // Correct guess: track this owl ID to prevent future duplicates
+      setClickedOwlIds(prev => [...prev, id])
+
+      // Increment score by 1. Update high score if applicable
+      setScore(prev => {
+        const newScore = prev + 1
+        if (newScore > highScore) setHighScore(newScore)
+        return newScore
+      })
+    }
 
     // Shuffle owl cards after each click
     setOwls(shuffle(owls))
@@ -50,7 +65,10 @@ export default function App() {
   return (
     <div>
       <Header />
-      <ScoreBoard />
+      <ScoreBoard
+        score={score}
+        highScore={highScore}
+      />
       <OwlGrid>
         {owls.map(owl => (
           <OwlCard
