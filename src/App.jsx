@@ -28,6 +28,9 @@ export default function App() {
   // All-time highest score
   const [highScore, setHighScore] = useState(0)
 
+  // UI messages
+  const [message, setMessage] = useState("")
+
   // Handle the current owl when clicked
   const handleClick = (id) => {
 
@@ -36,24 +39,28 @@ export default function App() {
 
     // Check if this owl was already clicked
     if (clickedOwlIds.includes(id)) {
-      console.log("already clicked", clickedOwlIds)
-      console.log("your guess is wrong")
+      setMessage("Your guess is wrong.")
 
       // Incorrect guess: reset score and clicked owl history
       setScore(0)
       setClickedOwlIds([])
 
     } else {
-      console.log("clicked once", clickedOwlIds)
-      console.log("your guess is correct")
+      setMessage("Your guess is correct.")
 
       // Correct guess: track this owl ID to prevent future duplicates
       setClickedOwlIds(prev => [...prev, id])
 
-      // Increment score by 1. Update high score if applicable
       setScore(prev => {
+        // Increment score by 1
         const newScore = prev + 1
+
+        // Update high score if new score is higher
         if (newScore > highScore) setHighScore(newScore)
+
+        // Win: if all owls are clicked
+        if (newScore === allOwls.length) setMessage("You win!")
+
         return newScore
       })
     }
@@ -64,7 +71,7 @@ export default function App() {
 
   return (
     <div>
-      <Header />
+      <Header message={message} />
       <ScoreBoard
         score={score}
         highScore={highScore}
