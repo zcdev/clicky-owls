@@ -1,7 +1,9 @@
-export default function ScoreBoard({ score, highScore }) {
+export default function Scoreboard({ score, highScore }) {
     return (
-        <div className="scoreboard">
-            <h3>Score: {score} | High Score: {highScore}</h3>
-        </div>
+        <section className="scoreboard" aria-live="polite">
+            <h2 className="sr-only">Scoreboard</h2>
+            <p>Score: {score}</p>
+            <p>High Score: {highScore}</p>
+        </section>
     )
 }

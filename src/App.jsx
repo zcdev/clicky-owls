@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Header from './components/Header'
-import ScoreBoard from './components/ScoreBoard'
+import Scoreboard from './components/Scoreboard'
 import OwlGrid from './components/OwlGrid'
 import OwlCard from './components/OwlCard'
 import { shuffle } from './utils/shuffle'
@@ -70,21 +70,23 @@ export default function App() {
   }
 
   return (
-    <div>
+    <>
       <Header message={message} />
-      <ScoreBoard
-        score={score}
-        highScore={highScore}
-      />
-      <OwlGrid>
-        {owls.map(owl => (
-          <OwlCard
-            key={owl.id}
-            owl={owl}
-            onClick={handleClick}
-          />
-        ))}
-      </OwlGrid>
-    </div>
+      <main aria-label="Owl memory game">
+        <Scoreboard
+          score={score}
+          highScore={highScore}
+        />
+        <OwlGrid>
+          {owls.map(owl => (
+            <OwlCard
+              key={owl.id}
+              owl={owl}
+              onClick={handleClick}
+            />
+          ))}
+        </OwlGrid>
+      </main>
+    </>
   )
 }

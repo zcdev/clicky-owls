@@ -5,6 +5,19 @@
   padding: 0;
 }
 
+/* Utility: Hide visually but keep for screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 body {
   font-family: system-ui, sans-serif;
   background-color: #000;
@@ -46,6 +59,7 @@ h1 {
   gap: 1rem;
   width: 100%;
   max-width: 800px;
+  list-style: none;
 }
 
 /* Individual owl card */

@@ -1,9 +1,9 @@
 export default function Header({ message }) {
     return (
-        <div className="header">
+        <header className="header">
             <h1>Clicky Owls</h1>
             <h2>Don't click me twice!</h2>
-            <h3>{ message }</h3>
-        </div>
+            <p aria-live="polite" className="message">{ message }</p>
+        </header>
     )
 }

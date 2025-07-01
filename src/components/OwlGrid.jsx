@@ -1,7 +1,9 @@
 export default function OwlGrid({ children }) {
     return (
-        <div className="owl-grid">
-            {children}
-        </div>
+        <section aria-label="Owl grid">
+            <ul className="owl-grid">
+                {children}
+            </ul>
+        </section>
     )
 }
