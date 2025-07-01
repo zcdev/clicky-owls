@@ -31,8 +31,14 @@ export default function App() {
   // UI messages
   const [message, setMessage] = useState("")
 
+  // Winning state
+  const [isGameWon, setIsGameWon] = useState(false)
+
   // Handle the current owl when clicked
   const handleClick = (id) => {
+
+    // Check winning state and freeze game if won
+    if (isGameWon) return;
 
     // DEBUG: log the current owl ID
     console.log(`Owl ${id} clicked!`)
@@ -59,8 +65,10 @@ export default function App() {
         if (newScore > highScore) setHighScore(newScore)
 
         // Win: if all owls are clicked
-        if (newScore === allOwls.length) setMessage("You win!")
-
+        if (newScore === allOwls.length) {
+          setMessage("You win!")
+          setIsGameWon(true)
+        }
         return newScore
       })
     }
@@ -77,7 +85,7 @@ export default function App() {
           score={score}
           highScore={highScore}
         />
-        <OwlGrid>
+        <OwlGrid isGameWon={isGameWon}>
           {owls.map(owl => (
             <OwlCard
               key={owl.id}
