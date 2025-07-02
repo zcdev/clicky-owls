@@ -46,9 +46,6 @@ export default function App() {
     // Check winning state and freeze game if won
     if (isGameWon) return;
 
-    // DEBUG: log the current owl ID
-    console.log(`Owl ${id} clicked!`)
-
     // Check if this owl was already clicked
     if (clickedOwlIds.includes(id)) {
       setMessage("Your guess is wrong.")
@@ -83,6 +80,7 @@ export default function App() {
     setOwls(shuffle(owls))
   }
 
+  // Reset for the game
   const restartGame = () => {
     setScore(0)
     setClickedOwlIds([])
