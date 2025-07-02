@@ -54,6 +54,11 @@ h1 {
   font-size: 3rem;
 }
 
+/* Owl emoji */
+.owl {
+  font-size: 1.7rem;
+}
+
 /* Game feedback message */
 .message {
   margin-top: 0.5rem;
@@ -87,7 +92,7 @@ h1 {
   pointer-events: none;
   cursor: not-allowed;
   opacity: 0.6;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
 }
 
 /* === Owl card styling === */
@@ -137,6 +142,28 @@ h1 {
 
 @media (max-width: 500px) {
   .owl-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2-column layout on mobile */
+    grid-template-columns: repeat(3, 1fr); /* 3-column layout on mobile */
+    gap: 1.5rem;
+  }
+
+  .message {
+    font-size: 1rem;
+  }
+
+  .header {
+    padding: 1rem 2rem 0.5rem 2rem;
+  }
+
+  main {
+    padding: 0rem 2rem 2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .scoreboard {
+    padding: 0.5rem 0rem 0.5rem 1rem;
   }
 }

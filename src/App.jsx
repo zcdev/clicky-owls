@@ -83,7 +83,7 @@ export default function App() {
     }
 
     // Shuffle owl cards after each click
-    // setOwls(shuffle(owls))
+    setOwls(shuffle(owls))
   }
 
   // Reset for the game
