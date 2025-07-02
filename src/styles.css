@@ -1,11 +1,13 @@
-/* Reset and base styles */
+/* === Reset and base styles === */
+
+/* Apply universal box-sizing and remove default spacing */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Utility: Hide visually but keep for screen readers */
+/* Hide visually but preserve for screen readers — accessible "invisible" text */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -13,26 +15,30 @@
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0); /* legacy syntax for clipping */
   white-space: nowrap;
   border: 0;
 }
 
+/* === Body styling === */
+
 body {
   font-family: system-ui, sans-serif;
-  background-color: #000;
+  background-color: #000; /* fallback in case image fails */
   color: #fff;
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* centers <main> horizontally */
   background-image: url('./assets/forest-bg.jpg');
-  background-attachment: fixed;
+  background-attachment: fixed; /* parallax-like effect */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.header {
+/* Shared layout for header and main */
+.header,
+main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,50 +46,97 @@ body {
   padding: 2rem;
 }
 
-/* App title or header */
+/* === Typography === */
+
+/* App title */
 h1 {
   margin-bottom: 1.5rem;
   font-size: 3rem;
 }
 
-/* Scoreboard */
-.scoreboard {
-  margin-bottom: 1rem;
+/* Game feedback message */
+.message {
+  margin-top: 0.5rem;
   font-size: 1.2rem;
 }
 
-/* Owl grid container */
+/* === Scoreboard === */
+
+.scoreboard {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  width: 188px; /* assumes max width needed for labels like "High Score" */
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+
+/* === Owl grid === */
+
 .owl-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
-  width: 100%;
-  max-width: 800px;
+  grid-template-columns: repeat(4, 1fr); /* fixed 4-column layout for desktop */
+  gap: 2rem;
+  max-width: 700px;
   list-style: none;
 }
 
+/* Freeze interaction when game is won */
 .game-freeze {
   pointer-events: none;
-  cursor: none;
+  cursor: not-allowed;
   opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
-/* Individual owl card */
+/* === Owl card styling === */
+
 .owl-card {
-  background-color: white;
-  border-radius: 8px;
+  border-radius: 100%; /* makes it a circle */
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  border: 1px solid #fff;
   transition: transform 0.2s ease;
   cursor: pointer;
 }
 
 .owl-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* simple hover animation */
 }
 
 .owl-card img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* === Restart button === */
+
+.restart-wrapper {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.restart-btn {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: #222;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.restart-btn:hover {
+  background-color: rgba(255, 255, 255, 0.85); /* subtle hover effect */
+}
+
+/* === Responsive layout for small screens === */
+
+@media (max-width: 500px) {
+  .owl-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2-column layout on mobile */
+  }
 }
