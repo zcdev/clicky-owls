@@ -4,6 +4,9 @@ import Scoreboard from './components/Scoreboard'
 import OwlGrid from './components/OwlGrid'
 import OwlCard from './components/OwlCard'
 import { shuffle } from './utils/shuffle'
+import Confetti from 'react-confetti'
+import { useWindowSize } from '@react-hook/window-size'
+
 
 // List of owls
 const allOwls = [
@@ -39,6 +42,9 @@ export default function App() {
 
   // Winning state
   const [isGameWon, setIsGameWon] = useState(false)
+
+  // Dynamically get the screen size
+  const [width, height] = useWindowSize()
 
   // Handle the current owl when clicked
   const handleClick = (id) => {
@@ -77,7 +83,7 @@ export default function App() {
     }
 
     // Shuffle owl cards after each click
-    setOwls(shuffle(owls))
+    // setOwls(shuffle(owls))
   }
 
   // Reset for the game
@@ -91,6 +97,19 @@ export default function App() {
 
   return (
     <>
+      {isGameWon && (
+        <Confetti
+          width={width}
+          height={height}
+          numberOfPieces={230}
+          gravity={0.03}
+          recycle={true}
+          colors={[
+            '#FFF7CC',  // pale moonlight yellow
+            '#FFE9A3'  // soft gold
+          ]}
+        />
+      )}
       <Header message={message} />
       <main aria-label="Owl memory game">
         <Scoreboard
