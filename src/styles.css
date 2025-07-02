@@ -29,7 +29,7 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center; /* centers <main> horizontally */
-  background-image: url('./assets/forest-bg.jpg');
+  background-image: url('assets/forest-bg.jpg');
   background-attachment: fixed; /* parallax-like effect */
   background-position: center;
   background-size: cover;
