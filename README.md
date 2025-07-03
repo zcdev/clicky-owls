@@ -75,7 +75,8 @@ This project is part of my personal portfolio rebuild initiative, where I transf
 
 ## Acknowledgements
 
-- **[Unsplash.com](https://unsplash.com)** – Resource for the owl photos
+- **[Unsplash.com](https://unsplash.com)** – Resource of the owl photos
+- **[Pixabay.com](https://pixabay.com)** – Resource of the original Forest background image, author unknown
 - **[Fotor](https://www.fotor.com/photo-editor-app/editor/basic)** - Image cropper
 - **[Tinify](https://tinypng.com)** - Radical image optimizer
 - **[OpenAI's ChatGPT](https://chatgpt.com)** – Assisted with design feedback, code reviews, best practices, and copywriting 😏
