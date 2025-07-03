@@ -34,6 +34,7 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  padding-top: 2rem;
 }
 
 /* Shared layout for header and main */
@@ -43,7 +44,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem 0;
+  padding: 0 1rem 2rem 1rem;
 }
 
 /* === Typography === */
@@ -151,7 +152,7 @@ h1 {
   }
 
   .header {
-    padding: 1rem 1rem 0.5rem 1rem;
+    padding: 0 1rem 0.5rem 1rem;
   }
 
   main {
