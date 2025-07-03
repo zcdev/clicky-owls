@@ -4,7 +4,7 @@ export default function Header({ message }) {
     return (
         <header className="header">
             <h1>Clicky Owls</h1>
-            <h2>Don't click me twice</h2>
+            <h2>Try to click all the owls without clicking twice.</h2>
             <motion.p
                 key={message} // forces re-animation on text change
                 className="message"
