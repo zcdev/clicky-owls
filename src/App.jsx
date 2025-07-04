@@ -115,6 +115,7 @@ export default function App() {
         <Scoreboard
           score={score}
           highestScore={highestScore}
+          owls={owls}
         />
         <OwlGrid isGameWon={isGameWon}>
           {owls.map(owl => (
