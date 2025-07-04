@@ -73,7 +73,7 @@ h1 {
   padding: 0.9rem;
   font-size: 1.2rem;
   line-height: 1.5;
-  width: 200px; /* assumes max width needed for labels like "High Score" */
+  width: auto; /* assumes max width needed for labels like "High Score" */
   border: 1px solid #fff;
   border-radius: 10px;
 }
@@ -169,6 +169,6 @@ h1 {
   }
 
   .scoreboard {
-    padding: 0.5rem 0rem 0.5rem 1rem;
+    padding: 0.5rem 1rem;
   }
 }
