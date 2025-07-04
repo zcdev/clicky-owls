@@ -8,7 +8,7 @@
 
 ## Overview
 
-Clicky Owls is a single-page application rebuilt from React `v16.7.0` to `v19.1.0`. This rebuild focuses on enhancing accessibility, user interaction, visual treatment, and mobile friendliness through modern frontend best practices.
+Clicky Owls is a single-page application rebuilt from React `v16.7.0` to `v19.1.0`. This project focuses on enhancing accessibility, user interaction, visual design, and mobile-friendliness following modern frontend best practices.
 
 ---
 
@@ -76,7 +76,7 @@ This project is part of my personal portfolio rebuild initiative, where I transf
 ## Acknowledgements
 
 - **[Unsplash.com](https://unsplash.com)** – Resource of the owl photos
-- **[Pixabay.com](https://pixabay.com)** – Resource of the original Forest background image, author unknown
+- **[Pixabay.com](https://pixabay.com)** – Resource of the original forest background image, author unknown
 - **[Fotor](https://www.fotor.com/photo-editor-app/editor/basic)** - Image cropper
 - **[Tinify](https://tinypng.com)** - Radical image optimizer
 - **[OpenAI's ChatGPT](https://chatgpt.com)** – Assisted with design feedback, code reviews, best practices, and copywriting 😏
