@@ -4,13 +4,9 @@
 
 🔗 **Live Demo:** [clicky-owls.vercel.app](https://clicky-owls.vercel.app)
 
----
-
 ## Overview
 
 Clicky Owls is a single-page application rebuilt from React `v16.7.0` to `v19.1.0`. This project focuses on enhancing accessibility, user interaction, visual design, and mobile-friendliness following modern frontend best practices.
-
----
 
 ## ✨ Features
 
@@ -22,16 +18,12 @@ Clicky Owls is a single-page application rebuilt from React `v16.7.0` to `v19.1.
 - 🧠 Freeze UI after win to prevent further clicks until restart
 - 🔁 Restart button with complete state reset
 
----
-
 ## 📱 Interaction
 
 - Tap or click each owl **only once** per round
 - Win by selecting all 12 owls without repeating
 - If you repeat a click on the same owl, the score resets, and the highest score remains
 - Celebrate win with animated confetti and a restart option
-
----
 
 ## 👩🏻‍💻 Tech Stack
 
@@ -40,8 +32,6 @@ Clicky Owls is a single-page application rebuilt from React `v16.7.0` to `v19.1.
 - [Framer Motion](https://www.framer.com/motion/)
 - [React Confetti](https://www.npmjs.com/package/react-confetti)
 - CSS Grid, Flexbox, custom styles (no UI framework)
-
----
 
 ## 🚀 Getting Started (Local Dev)
 
@@ -79,6 +69,6 @@ This project is part of my personal portfolio rebuild initiative, where I transf
 - **[Pixabay.com](https://pixabay.com)** – Resource of the original forest background image, author unknown
 - **[Fotor](https://www.fotor.com/photo-editor-app/editor/basic)** – Image cropper
 - **[Tinify](https://tinypng.com)** – Radical image optimizer
-- **[OpenAI's ChatGPT](https://chatgpt.com)** – Assisted with design feedback, code reviews, best practices, and copywriting 😏
+- **[OpenAI's ChatGPT](https://chatgpt.com)** – Assisted with design feedback, code reviews, best practices, and copywriting
 
 Created by ZCDEV — Designed, developed, and deployed with ✨
