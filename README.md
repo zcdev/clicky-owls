@@ -30,7 +30,7 @@ Challenge it here: [clicky-owls.vercel.app](https://clicky-owls.vercel.app) — 
 - React setState() is asynchronous — Don't rely on the immediate value update within the same function.
 - Replaced legacy JavaScript array method `.concat()` with the functional `setState()` pattern.
 - Vercel deployment was smooth once path resolution and casing were corrected.
-- A focus on a11y and UI feedback made the app more polished and inclusive.
+- A focus on a11y and UI messages made the app more polished and inclusive.
 
 ## ⚡ Getting Started
 ```
