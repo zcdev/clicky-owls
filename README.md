@@ -43,10 +43,10 @@ cd clicky-owls
 - **[Pixabay.com](https://pixabay.com)** – Resource of the original forest background image, author unknown
 - **[Fotor](https://www.fotor.com/photo-editor-app/editor/basic)** – Image cropper
 - **[Tinify](https://tinypng.com)** – Radical image optimizer
-- **[OpenAI's ChatGPT](https://chatgpt.com)** – Assisted with design feedback, code reviews, best practices, and copywriting
 
 Created by [Zoe Chang](https://github.com/zcdev)        
-Designed, developed, and deployed with 💫      
+Designed, developed, and deployed with 💫  
+Inspired and informed through collaborative learning with ChatGPT.
 (Originally developed in the UCBX curriculum)
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/zcdev/mytechiecookie)

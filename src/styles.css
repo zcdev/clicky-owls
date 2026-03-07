@@ -5,6 +5,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  letter-spacing: 0.02em;
 }
 
 /* Hide visually but preserve for screen readers — accessible "invisible" text */
@@ -34,7 +35,6 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 2rem;
 }
 
 /* Shared layout for header and main */
@@ -44,7 +44,10 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 1rem 2rem 1rem;
+}
+
+.header {
+  padding: 2rem 0 0.5rem 0;
 }
 
 /* === Typography === */
@@ -55,6 +58,10 @@ h1 {
   font-size: 3rem;
 }
 
+h2 {
+  text-align: center;
+}
+
 /* Owl emoji */
 .owl {
   font-size: 1.7rem;
@@ -62,19 +69,20 @@ h1 {
 
 /* Game feedback message */
 .message {
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
   font-size: 1.2rem;
 }
 
 /* === Scoreboard === */
 
 .scoreboard {
-  margin-bottom: 2rem;
+  margin: 0.5rem 0 2.5rem 0;
   padding: 0.9rem;
   font-size: 1.2rem;
-  line-height: 1.5;
+  line-height: 1.5rem;
   width: auto; /* assumes max width needed for labels like "High Score" */
-  border: 1px solid #fff;
+  background: #fff;
+  color: #000;
   border-radius: 10px;
 }
 
@@ -144,19 +152,24 @@ h1 {
 @media (max-width: 500px) {
   .owl-grid {
     grid-template-columns: repeat(3, 1fr); /* 3-column layout on mobile */
-    gap: 1.5rem;
+    gap: 1rem;
   }
 
   .message {
     font-size: 1rem;
+    margin-top: 0.5rem;
   }
 
   .header {
-    padding: 0 1rem 0.5rem 1rem;
+    padding: 1rem 1rem 0rem 1rem;
+  }
+
+  .header h2 {
+    font-size: 1rem;
   }
 
   main {
-    padding: 0rem 2rem 2rem;
+    padding: 0 2rem;
   }
 
   h1 {
@@ -166,9 +179,20 @@ h1 {
 
   h2 {
     font-size: 0.8rem;
+    font-weight: normal;
   }
 
   .scoreboard {
-    padding: 0.5rem 1rem;
+    padding: 0.35rem 0.5rem 0.4rem 0.5rem;
+    margin: 0.5rem 0 1rem 0;
+  }
+
+  .scoreboard p {
+    font-size: 0.9rem;
+    line-height: 1rem;
+  }
+
+  .scoreboard p:not(:last-child) {
+    padding-right: 0.5rem;
   }
 }
